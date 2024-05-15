@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOvcugrQ559b2cuZOnh743Y",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Sumasreen/intermediate-level/blob/main/chat_bot.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eRa2WivYxatP",
+        "outputId": "88f10cfa-fd67-4686-ff1e-a6b83d1e0474"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Welcome to ChatBotAI\n",
+            "You: hello\n",
+            "Bot: Hi there!\n",
+            "You: how are you?\n",
+            "Bot: I'm just a bot, but thanks for asking!\n",
+            "You: what are you doing?\n",
+            "Bot: I'm sorry, I don't understand that.\n"
+          ]
+        }
+      ],
+      "source": [
+        "from threading import Thread, Event\n",
+        "from time import sleep\n",
+        "\n",
+        "\n",
+        "class ChatBot:\n",
+        "    def __init__(self, callback, first_message=\"Welcome to ChatBotAI\", terminate=\"quit\"):\n",
+        "        self.callback = callback\n",
+        "        self.terminate = terminate\n",
+        "        if first_message:\n",
+        "            print(first_message)\n",
+        "\n",
+        "    def process_message(self, message):\n",
+        "        bot_message = self.callback(message)\n",
+        "        print(\"Bot:\", bot_message)\n",
+        "\n",
+        "    def user_input_handler(self):\n",
+        "        while True:\n",
+        "            message = input(\"You: \")\n",
+        "            if message.lower() == self.terminate:\n",
+        "                break\n",
+        "            self.process_message(message)\n",
+        "\n",
+        "    def start(self):\n",
+        "        user_thread = Thread(target=self.user_input_handler)\n",
+        "        user_thread.start()\n",
+        "        user_thread.join()\n",
+        "\n",
+        "\n",
+        "def bot_response(message):\n",
+        "    if message.lower() == \"hello\":\n",
+        "        return \"Hi there!\"\n",
+        "    elif message.lower() == \"how are you?\":\n",
+        "        return \"I'm just a bot, but thanks for asking!\"\n",
+        "    else:\n",
+        "        return \"I'm sorry, I don't understand that.\"\n",
+        "\n",
+        "\n",
+        "def main():\n",
+        "    chat_bot = ChatBot(bot_response)\n",
+        "    chat_bot.start()\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()\n",
+        "\n"
+      ]
+    }
+  ]
+}
