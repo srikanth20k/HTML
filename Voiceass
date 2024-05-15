@@ -1,0 +1,131 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPiXuv05SXopoOa7oXpqNEM",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Sumasreen/intermediate-level/blob/main/voice_ass.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oCI1_cWKypR4",
+        "outputId": "314545eb-aa77-4cdf-89af-cedcdecb0455"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Amigo assistance activated \n",
+            "How can I help you?\n",
+            "Listening...\n",
+            "You: open youtube\n",
+            "Opening YouTube...\n",
+            "Listening...\n",
+            "You: open Google\n",
+            "Opening Google...\n",
+            "Listening...\n",
+            "You: open Github\n",
+            "Opening GitHub...\n",
+            "Listening...\n"
+          ]
+        }
+      ],
+      "source": [
+        "def take_command():\n",
+        "    print(\"Listening...\")\n",
+        "    query = input(\"You: \")\n",
+        "    return query\n",
+        "\n",
+        "if __name__ == '__main__':\n",
+        "    print(\"Amigo assistance activated \")\n",
+        "    print(\"How can I help you?\")\n",
+        "\n",
+        "    while True:\n",
+        "        query = take_command().lower()\n",
+        "\n",
+        "        if 'wikipedia' in query:\n",
+        "            print(\"Searching Wikipedia ...\")\n",
+        "            query = query.replace(\"wikipedia\", '')\n",
+        "            try:\n",
+        "                results = \"Dummy Wikipedia summary for \" + query\n",
+        "                print(\"According to Wikipedia:\")\n",
+        "                print(results)\n",
+        "            except:\n",
+        "                print(\"Error: Unable to fetch Wikipedia information.\")\n",
+        "\n",
+        "        elif 'are you' in query:\n",
+        "            print(\"I am Amigo, developed by Jaspreet Singh.\")\n",
+        "\n",
+        "        elif 'open youtube' in query:\n",
+        "            print(\"Opening YouTube...\")\n",
+        "            # Code to open YouTube in a web browser\n",
+        "\n",
+        "        elif 'open google' in query:\n",
+        "            print(\"Opening Google...\")\n",
+        "            # Code to open Google in a web browser\n",
+        "\n",
+        "        elif 'open github' in query:\n",
+        "            print(\"Opening GitHub...\")\n",
+        "            # Code to open GitHub in a web browser\n",
+        "\n",
+        "        elif 'open stackoverflow' in query:\n",
+        "            print(\"Opening Stack Overflow...\")\n",
+        "            # Code to open Stack Overflow in a web browser\n",
+        "\n",
+        "        elif 'open spotify' in query:\n",
+        "            print(\"Opening Spotify...\")\n",
+        "            # Code to open Spotify in a web browser\n",
+        "\n",
+        "        elif 'open whatsapp' in query:\n",
+        "            print(\"Opening WhatsApp...\")\n",
+        "            # Code to open WhatsApp application\n",
+        "\n",
+        "        elif 'play music' in query:\n",
+        "            print(\"Playing music...\")\n",
+        "            # Code to play music\n",
+        "\n",
+        "        elif 'local disk d' in query:\n",
+        "            print(\"Opening Local Disk D...\")\n",
+        "            # Code to open Local Disk D\n",
+        "\n",
+        "        elif 'local disk c' in query:\n",
+        "            print(\"Opening Local Disk C...\")\n",
+        "            # Code to open Local Disk C\n",
+        "\n",
+        "        elif 'local disk e' in query:\n",
+        "            print(\"Opening Local Disk E...\")\n",
+        "            # Code to open Local Disk E\n",
+        "\n",
+        "        elif 'sleep' in query:\n",
+        "            print(\"Exiting Amigo.\")\n",
+        "            break\n"
+      ]
+    }
+  ]
+}
