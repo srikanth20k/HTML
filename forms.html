@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="index.css" type="text/css"> -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="index.css" type="text/css">
+<body>
+    <h1>Course Registration Form :-</h1>
+    <form action="">
+        <fieldset>
+            <legend>Personal Details </legend>
+            <table>
+                <tr><td><label>First Name:-</label></td><td><input type="text" name="FN" placeholder="srikanth" size="15" maxlength="10"></td></tr>
+                <tr><td><label>Surname :-</label></td><td><input type="text" name ="SN" placeholder="Adipireddy" size="15" maxlength="15"></td></tr>
+                <tr><td><label> Mobile Number :- </label></td><td><input type="tel" name ="MN" placeholder="123-456-7890" size="15"><br></td></tr>
+                <tr><td><label>Email :-</label></td><td><input type="email" size="15" placeholder="sree@gmail.com"></td></tr>
+                <tr><td><label for="password">Password :-</label></td><td><input type="password" name="pws" placeholder="min-5 char" size="15"></td></tr>
+                <tr><td><label for="">Conform password :-</label></td><td><input type="password" name="cwpwd" placeholder="min-5 char" size="15"></td></tr>
+                <tr><td><label >DOB :-</label></td><td><input type="date" name="dob"></td></tr>
+                <tr><td><label> Genser :-</label></td><td></label><input type="radio" name ="gender" value="M">Male<input type="radio" name="gender" value="F">Female<input type="radio" name="gender" value="C">Custom</td></tr>
+                <tr><td><label> Select Country :-</label></td><td><select name="country">
+                    <option value="INDIA">INDIA</option>
+                    <option value="USA">USA</option>
+                    <option value="china">CHINA</option>
+                </select></td></tr>
+                <tr><td><label>Upload Picture :-</label></td><td><input type="file" name="pic"><br></td></tr>
+                <tr><td><input type="reset"></td>
+            </table>
+                
+        </fieldset>
+        <fieldset>
+            <legend>Course Details </legend>
+            <table>
+            <tr><td><label>Select Course :-</label></td><td><select name="Course">
+                <option value="PFS">Python Full Stack</option>
+                <option value="JFS">Java Full Stack</option>
+                <option value="PDS">Python Data Science</option>
+            </select></td></tr><br>
+            <tr><td><label> Delivery Mode :-</label></td><td><input type="checkbox" name ="mode1" value="ON">ONLINE
+            <input type="checkbox" name ="mode2" value="OFF">OFFLINE</td></tr>
+            <tr><td><label>Comments :-</label></td><td><textarea rows="4" cols="50"> </textarea></td></tr>
+            </table>
+        </fieldset>
+        <input type="button" value="Submit"> 
+    </form> 
+</body>
+</html>
